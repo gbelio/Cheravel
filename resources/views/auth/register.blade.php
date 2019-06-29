@@ -13,13 +13,13 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            {{--<br>
+            <br>
             <input id="surname" type="text" placeholder="Apellido" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
             @error('surname')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror --}}
+            @enderror
             <br>
             <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
             @error('email')
@@ -28,10 +28,10 @@
                 </span>
             @enderror
             <br>
-            {{-- <div class="custom-file">
+            <div class="custom-file">
                 <input type="file" class="" id="avatar" name="avatar" value="">
-            </div> 
-            <br><br>--}}
+            </div>
+            <br><br>
             <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
             @error('password')
                 <span class="invalid-feedback" role="alert">

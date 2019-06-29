@@ -50,8 +50,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => 'file'
         ]);
     }
 
@@ -61,12 +63,20 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    
     protected function create(array $data)
     {
+        
+        if(isset($data['avatar'])){
+            $rutaAvatar = $data['avatar']->store('avatar','public');
+            $avatarFile = basename($rutaAvatar);
+        }
         return User::create([
             'name' => $data['name'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar' => $avatarFile,
         ]);
     }
 }
