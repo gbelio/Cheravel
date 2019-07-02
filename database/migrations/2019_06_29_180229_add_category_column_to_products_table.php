@@ -14,7 +14,7 @@ class AddCategoryColumnToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->integer('category_id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddCategoryColumnToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn('category_id');
         });
     }
 }

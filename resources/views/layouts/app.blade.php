@@ -92,7 +92,7 @@
                                     <a class="nav-link" href="#">QUIÉNES SOMOS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">CÓMO COMPRAR</a>
+                                    <a class="nav-link" href="/admin">ADMINISTRAR</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/faqs">PREGUNTAS FRECUENTES</a>

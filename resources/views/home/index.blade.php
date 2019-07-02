@@ -42,7 +42,7 @@
     @if ($product->ranking > 2)
     <article class="col-12 col-md-4 col-lg-4">
         <div class="card bg-light text-black">
-        <a href="#"><img src="{{$product->photopath}}" class="card-img" alt="Producto1"></a> {{$product->name}} <br>
+        <a href="#"><img src="/storage/{{$product->photopath}}" class="card-img" alt="Producto1"></a> {{$product->name}} <br>
         </div>
     </article>
     @endif
