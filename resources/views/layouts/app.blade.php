@@ -92,11 +92,15 @@
                                     <a class="nav-link" href="#">QUIÉNES SOMOS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin">ADMINISTRAR</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="/faqs">PREGUNTAS FRECUENTES</a>
                                 </li>
+                                @if(Auth::check())
+                                    @if(auth()->user()->role == 3)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin">ADMINISTRAR</a>
+                                        </li>
+                                    @endif
+                                @endif
                             </ul>
                         </div>
                     </ul>
@@ -127,10 +131,13 @@
                         </article>
                         <article class="col-12 col-sm-12 col-lg-12">
                             <div class="redes">
-                                <a href="http://www.facebook.com"><img class="size" src="images/facebook.png" alt="facebook"></a>
-                                <a href="http://www.instagram.com"><img class="size" src="images/instagram.png" alt="instagram"></a>
-                                <a href="https://web.whatsapp.com/send?phone=+541166793520&text=Hola!"><img class="sizedesktop" src="images/whatsapp.png" alt="whatsapp"></a>
-                                <a href="https://wa.me/541166793520?text=Hola"><img class="sizemobile" src="images/whatsapp.png" alt="whatsapp"></a>
+                                <a href="http://www.facebook.com"><img class="size" src="{{ asset('images/facebook.png') }}" alt="facebook"></a>
+
+                                <a href="http://www.instagram.com"><img class="size" src="{{ asset('images/instagram.png') }}" alt="instagram"></a>
+
+                                <a href="https://web.whatsapp.com/send?phone=+541166793520&text=Hola!"><img class="sizedesktop" src="{{ asset('images/whatsapp.png') }}" alt="whatsapp"></a>
+
+                                <a href="https://wa.me/541166793520?text=Hola"><img class="sizemobile" src="{{ asset('images/whatsapp.png') }}" alt="whatsapp"></a>
                             </div>
                         </article>
                     </div>

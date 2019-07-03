@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-7 offset-1">
-    <h3 class="">Editar Products:</h3>
-    <h2>{{$message}}</h2>
+    <h3 class="">Editar Productos:</h3>
     <h2>{{ $product->name }}</h2>
     @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -29,6 +28,7 @@
             <label for="Precio">Precio</label>
             <input type="text" name="amount" value="{{ $product->amount }}" class="form-control">
         </div>
+        
         <div class="form-group">
             <div class="custom-file">
                 <input type="file" class="" id="photopath" name="photopath" value="{{ $product->photopath }}">
@@ -40,7 +40,7 @@
                 <option value="{{ $product->ranking }}" selected>{{ $product->ranking }}</option>
             @for ($i = 1; $i <= 5; $i++)
                 @if ($product->ranking != $i)
-                    <option value="{{ $product->ranking }}">{{$i}}</option>
+                    <option value="{{ $i }}">{{$i}}</option>
                 @endif
             @endfor
         </select>

@@ -5,9 +5,12 @@
         <article class="col-12 col-md-4 col-lg-4">
             <div class="card bg-light text-black">
                 <a href="#"><img src="/storage/{{$product->photopath}}" class="card-img" alt="{{$product->id}}"></a> {{$product->name}}
-                <br><br>
-                <a href="{{url("products/edit/$product->id")}}">EDITAR</a>
-                <a href="{{url("products/delete/$product->id")}}">BORRAR</a>
+                @if(Auth::check())
+                    @if(auth()->user()->role == 3)
+                        <a href="{{url("products/edit/$product->id")}}">EDITAR</a>
+                        <a href="{{url("products/delete/$product->id")}}">BORRAR</a>
+                    @endif
+                @endif
             </div>
         </article>
     @endforeach

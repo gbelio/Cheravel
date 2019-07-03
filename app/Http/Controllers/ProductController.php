@@ -28,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('products.create');
+        $categories = Category::all();
+        return view ('products.create')->with('categories', $categories);
     }
 
     /**
@@ -127,11 +128,10 @@ class ProductController extends Controller
         $product->description = $request->input('description') !== $product->description ? $request->input('description') : $product->description;
         $product->amount = $request->input('amount') !== $product->amount ? $request->input('amount') : $product->amount;
         
-        $product->photopath = $request->input('photopath') !== "" ? $request->file('photopath')->store('posters', 'public') : $product->photopath;
+        $product->photopath = $request->hasFile('photopath') ? $request->file('photopath')->store('posters', 'public') : $product->photopath;
         
         $product->ranking = $request->input('ranking') !== $product->ranking ? $request->input('ranking') : $product->ranking;
         $product->category_id = $request->input('category_id') !== $product->category_id ? $request->input('category_id') : $product->category_id;
-
         $product->save();
 
         return redirect('/products/edit/' . $product->id);

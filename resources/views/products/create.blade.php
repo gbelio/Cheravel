@@ -32,19 +32,24 @@
                 <input type="file" class="" id="photopath" name="photopath" value="" required>
             </div>
             <br><br>
-            <input id="ranking" type="ranking" placeholder="Valoración" class="form-control @error('ranking') is-invalid @enderror" name="ranking" value="{{ old('ranking') }}" required autocomplete="new-ranking">
-            @error('ranking')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+            <div class="form-group">
+                <label for="Valoración">Valoración</label>
+                <select class="form-control" name="ranking">
+                @for ($i = 1; $i <= 5; $i++)
+                    <option value="{{ $i }}">{{$i}}</option>
+                @endfor
+            </select>
+            </div>
             <br>
-            <input id="category_id" type="category_id" placeholder="Categoría" class="form-control @error('category_id') is-invalid @enderror" name="category_id" value="{{ old('category_id') }}" required autocomplete="new-category_id">
-            @error('category_id')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+
+            <div class="form-group">
+                <label for="Categoría">Categoría</label>
+                <select class="form-control" name="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->description }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         <br>
         <div class="col-xs-12">
