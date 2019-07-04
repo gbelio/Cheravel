@@ -137,6 +137,15 @@ class ProductController extends Controller
         return redirect('/products/edit/' . $product->id);
     }
 
+
+    public function specs($id){
+        $categories = Category::all();
+        $product = Product::find($id);
+        return view('products.specs')
+            ->with('product', $product)
+            ->with('categories', $categories);
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
