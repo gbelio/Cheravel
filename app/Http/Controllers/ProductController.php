@@ -30,8 +30,14 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $count = [];
+        if (Auth::check()){
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+        }
         $categories = Category::all();
-        return view ('products.create')->with('categories', $categories);
+        return view ('products.create')
+        ->with('categories', $categories)
+        ->with('count', $count);
     }
 
     /**
@@ -83,7 +89,10 @@ class ProductController extends Controller
     {
         $categories = Product::all();
         $products = Product::all();
-        $count = Cart::where('user_id', Auth::user()->id)->count();
+        $count = [];
+        if (Auth::check()){
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+        }
         return view ('products.show')
             ->with('products', $products)
             ->with('categories', $categories)
@@ -100,9 +109,14 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $product = Product::find($id);
+        $count = [];
+        if (Auth::check()){
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+        }
         return view('products.edit')
             ->with('product', $product)
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('count', $count);
 
         
     }

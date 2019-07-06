@@ -27,7 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::all();
-        $count = Cart::where('user_id', Auth::user()->id)->count();
+        $count = [];
+        if (Auth::check()){
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+        }
         return view('home.index')->with('products', $products)->with('count', $count);
     }
 }
