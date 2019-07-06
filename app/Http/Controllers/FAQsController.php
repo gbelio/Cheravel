@@ -8,6 +8,7 @@ class FAQsController extends Controller
 {
     public function index()
     {
-        return view('faqs.index');
+        $count = Cart::where('user_id', Auth::user()->id)->count();
+        return view('faqs.index')->with('count', $count);
     }
 }

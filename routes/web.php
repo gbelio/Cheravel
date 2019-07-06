@@ -15,6 +15,9 @@ Route::get('/products/edit/{id}', 'ProductController@edit')->middleware('admin')
 Route::patch('/products/edit/{id}', 'ProductController@update')->middleware('admin');
 Route::get('/products/delete/{id}', 'ProductController@destroy')->middleware('admin');
 
+Route::get('/cart/{id}', 'CartController@index');
+Route::get('/cart/add/{id}', 'CartController@add');
+
 Route::get('/admin', 'AdminController@index')->middleware('admin');
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -59,3 +59,17 @@ nav .navbar-brand h1 {
   width: 40px;
   height: 40px;
 }
+
+.cart{
+  width: 20px;
+  height: 20px;
+}
+
+.itemsCounter{
+  margin-right: -32px;
+  margin-top: -25px;
+  padding-left: 5px;
+  background-color: white;
+  width: 19px;
+  border-radius: 50%;
+}

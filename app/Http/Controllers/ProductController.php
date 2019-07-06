@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Cart;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -81,7 +83,11 @@ class ProductController extends Controller
     {
         $categories = Product::all();
         $products = Product::all();
-        return view ('products.show')->with('products', $products)->with('categories', $categories);
+        $count = Cart::where('user_id', Auth::user()->id)->count();
+        return view ('products.show')
+            ->with('products', $products)
+            ->with('categories', $categories)
+            ->with('count', $count);
     }
 
     /**

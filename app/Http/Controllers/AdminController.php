@@ -8,7 +8,8 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $count = Cart::where('user_id', Auth::user()->id)->count();
+        return view('admin.index')->with('count', $count);
     }
     
 }

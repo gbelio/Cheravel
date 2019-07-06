@@ -10,6 +10,7 @@
                         <a href="{{url("products/edit/$product->id")}}">EDITAR</a>
                         <a href="{{url("products/delete/$product->id")}}">BORRAR</a>
                     @endif
+                    <a href="{{url("cart/add/$product->id")}}">AGREGAR A CARRITO</a>
                 @endif
             </div>
         </article>
