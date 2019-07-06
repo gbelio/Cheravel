@@ -159,11 +159,16 @@ class ProductController extends Controller
 
 
     public function specs($id){
+        $count = [];
+        if (Auth::check()){
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+        }
         $categories = Category::all();
         $product = Product::find($id);
         return view('products.specs')
             ->with('product', $product)
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('count', $count);
     }
     
     /**
