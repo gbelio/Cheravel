@@ -5,6 +5,8 @@ Route::get('/', 'HomeController@index');
 Route::get('/register', 'RegisterController@index');
 
 Route::get('/faqs', 'FAQsController@index');
+Route::get('/contact', 'ContactController@index');
+Route::get('/aboutus', 'AboutUsController@index');
 
 Route::get('/products', 'ProductController@show');
 Route::get('/products/create', 'ProductController@create')->middleware('admin');

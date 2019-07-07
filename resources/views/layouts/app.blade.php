@@ -85,13 +85,13 @@
                                     <a class="nav-link" href="/home">INICIO <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">CONTACTOS</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="/products">PRODUCTOS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">QUIÉNES SOMOS</a>
+                                    <a class="nav-link" href="/contact">CONTACTANOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/aboutus">QUIÉNES SOMOS</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/faqs">PREGUNTAS FRECUENTES</a>
