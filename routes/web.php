@@ -19,6 +19,7 @@ Route::get('/products/delete/{id}', 'ProductController@destroy')->middleware('ad
 
 Route::get('/cart/{id}', 'CartController@index');
 Route::get('/cart/add/{id}', 'CartController@add');
+Route::get('/cart/remove/{id}', 'CartController@destroy');
 
 Route::get('/admin', 'AdminController@index')->middleware('admin');
 Route::get('/home', 'HomeController@index')->name('home');
