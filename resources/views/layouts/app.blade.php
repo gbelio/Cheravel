@@ -43,7 +43,7 @@
             @else
             <label for="" class = "itemsCounter">{{$count}}</label>
                 <a href="/cart/{{Auth::user()->id}}"><img src="/images/cart1.png" class="cart" alt="Mini Cart"></a>
-                <img src="/storage/avatar/{{ Auth::user()->avatar }}" class="miniAvatar" alt="Mini Avatar">
+                <a href="/user/edit/{{Auth::user()->id}}"><img src="/storage/avatar/{{ Auth::user()->avatar }}" class="miniAvatar" alt="Mini Avatar"></a>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle status-bar" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>

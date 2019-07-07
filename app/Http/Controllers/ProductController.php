@@ -117,8 +117,6 @@ class ProductController extends Controller
             ->with('product', $product)
             ->with('categories', $categories)
             ->with('count', $count);
-
-        
     }
     /**
      * Update the specified resource in storage.

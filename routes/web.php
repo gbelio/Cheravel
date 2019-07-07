@@ -24,4 +24,6 @@ Route::get('/cart/remove/{id}', 'CartController@destroy');
 Route::get('/admin', 'AdminController@index')->middleware('admin');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/user/edit/{id}', 'UserController@edit');
+
 Auth::routes();
