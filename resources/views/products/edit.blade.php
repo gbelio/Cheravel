@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-7 offset-1">
+<div class="col-5 offset-1">
     <h3 class="">Editar Productos:</h3>
     <h2>{{ $product->name }}</h2>
     @if (count($errors) > 0)

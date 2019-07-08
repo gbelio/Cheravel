@@ -69,14 +69,13 @@ class RegisterController extends Controller
         
         if(isset($data['avatar'])){
             $rutaAvatar = $data['avatar']->store('avatar','public');
-            $avatarFile = basename($rutaAvatar);
         }
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => $avatarFile,
+            'avatar' => $rutaAvatar,
         ]);
     }
 }

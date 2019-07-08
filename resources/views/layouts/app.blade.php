@@ -31,25 +31,28 @@
         <ul class="navbar ml-auto">
             <!-- Authentication Links -->
             @guest
-                <li class="nav-item">
+                <li class="nav-item registerLogin">
                     <a class="nav-link status-bar" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                 </li>
-                |
+                <label class="registerLoginDivisor" for="">|</label>
                 @if (Route::has('register'))
-                    <li class="nav-item">
+                    <li class="nav-item registerLogin">
                         <a class="nav-link status-bar" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                     </li>
                 @endif
             @else
             <label for="" class = "itemsCounter">{{$count}}</label>
                 <a href="/cart/{{Auth::user()->id}}"><img src="/images/cart1.png" class="cart" alt="Mini Cart"></a>
-                <a href="/user/edit/{{Auth::user()->id}}"><img src="/storage/avatar/{{ Auth::user()->avatar }}" class="miniAvatar" alt="Mini Avatar"></a>
+                <a href="/profile/edit/{{Auth::user()->id}}"><img src="/storage/{{ Auth::user()->avatar }}" class="miniAvatar" alt="Mini Avatar"></a>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle status-bar" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="MenuDesplegableLogOut" href="/profile/edit/{{Auth::user()->id}}">
+                            {{ __('Perfil') }}
+                        </a>
                         <a class="MenuDesplegableLogOut" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">

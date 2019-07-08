@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-7 offset-1">
+<div class="col-5 offset-1">
         <h3 class="">Editar Perfil:</h3>
         <h2>{{ $user->name }}</h2>
         @if (count($errors) > 0)
@@ -21,17 +21,17 @@
                 <input type="text" name="name" value="{{ $user->name }}" class="form-control">
             </div>
             <div class="form-group">
-                <label for="Descripción">Surname</label>
+                <label for="Descripción">Apellido</label>
                 <input type="text" name="surname" value="{{ $user->surname }}" class="form-control">
             </div>
             <div class="form-group">
-                <label for="Precio">email</label>
-                <input type="email" name="email" value="{{ $user->email }}" class="form-control">
+                <label for="Precio">Email</label>
+                <label type="email" name="email" value="" class="form-control">{{ $user->email }}</label>
             </div>
-            
+            <label for="Descripción">Avatar</label>
             <div class="form-group">
                 <div class="custom-file">
-                    <input type="file" class="" id="photopath" name="photopath" value="{{ $user->photopath }}">
+                    <input type="file" class="" id="photopath" name="avatar" value="{{ $user->avatar }}">
                 </div>
             </div>
             <div class="form-group">

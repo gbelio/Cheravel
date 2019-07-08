@@ -75,3 +75,14 @@ nav .navbar-brand h1 {
   border-radius: 50%;
   text-align: center;
 }
+
+.registerLogin{
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.registerLoginDivisor{
+  margin-right: 10px;
+  margin-top: 8px;
+  margin-left:10px;
+}
