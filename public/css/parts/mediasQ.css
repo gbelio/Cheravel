@@ -9,6 +9,11 @@
         padding-top: 15px;
         margin: 10px;
     }
+
+    .avatarDesktop{
+        margin-top: 200px;
+        margin-left: 70px;
+    }
 }
 
 @media (min-width: 575px) {
@@ -19,4 +24,5 @@
         padding-top: 15px;
         margin: 10px;
     }
+
 }
